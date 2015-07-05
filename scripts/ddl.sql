@@ -198,3 +198,19 @@ create sequence mean_house_prices_seq;
       :NEW.ID := mean_house_prices_seq.nextval;
     end BI_MEAN_HOUSE_PRICES;
     /
+
+
+
+    create or replace view v_current_mean_price as
+    with mean_prices as (
+    select state, case quarter when 'JUN' then 1 when 'SEPT' then 2 when 'DEC' then 3 when 'MAR' then 4 else 5 end ordered_quarter, year, mean_price
+    from mean_house_prices
+    ),
+    ranked_prices as (
+    select state, year, mean_price, row_number() over (partition by state order by year desc, ordered_quarter asc) rn
+    from mean_prices
+    )
+    select state, mean_price
+    from ranked_prices
+    where rn = 1;
+    /
