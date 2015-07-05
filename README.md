@@ -19,7 +19,7 @@ To make this project possible, we utilised data from both the Australian Taxatio
 *. Run the script scripts/ddl.sql
 * Run the script scripts/data.sql
 * Create a workspace in Application Express
-* Import the application export file f102381.sql
+* Import the application export file scripts/f102381.sql
 
 ## Usage
 
