@@ -214,3 +214,10 @@ create sequence mean_house_prices_seq;
     from ranked_prices
     where rn = 1;
     /
+
+
+create or replace view v_state_weekly_spending as
+select state, sum(weekly_spend) total_spending
+from state_expenditure
+group by state;
+/
