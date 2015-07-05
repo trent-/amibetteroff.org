@@ -22,3 +22,13 @@ To make this project possible, we utilised data from both the Australian Taxatio
 * Import the application export file f102381.sql
 
 ## Usage
+
+Run your application - or if you want to demo the publically hosted demo, go to: https://apex.oracle.com/pls/apex/f?p=102381.
+
+Fill out the form with your details.
+
+![](img/1_form.png)
+
+Then click the `show me the comparisons` button, and you will be shown the analysis.
+
+![](img/2_charts.png)
